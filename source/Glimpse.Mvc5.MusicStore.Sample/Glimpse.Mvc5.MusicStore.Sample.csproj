@@ -290,6 +290,10 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Glimpse.Logstash\Glimpse.Logstash.csproj">
+      <Project>{3c809db6-509e-44c7-a316-743883e0dcd5}</Project>
+      <Name>Glimpse.Logstash</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Glimpse.Ado.Net45\Glimpse.Ado.Net45.csproj">
       <Project>{1594add8-62f8-417b-bd69-131afbbf51bc}</Project>
       <Name>Glimpse.Ado.Net45</Name>

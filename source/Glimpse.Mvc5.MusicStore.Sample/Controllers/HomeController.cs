@@ -9,17 +9,26 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using MvcMusicStore.Models;
+using Glimpse.Logstash;
 
 namespace MvcMusicStore.Controllers
 {
     public class HomeController : Controller
     {
+        private static GlimpseLogstashAgent agent;
+
         private MusicStoreEntities storeDB = new MusicStoreEntities();
         //
         // GET: /Home/
 
         public async Task<ActionResult> Index()
         {
+            if (agent == null)
+            {
+                agent = new GlimpseLogstashAgent();
+                agent.Subscribe();
+            }
+
             // Get most popular albums
             var albums = await GetTopSellingAlbums(6);
             //var albums = GetTopSellingAlbums(6);

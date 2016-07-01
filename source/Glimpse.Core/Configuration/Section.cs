@@ -245,6 +245,44 @@ namespace Glimpse.Core.Configuration
         }
 
         /// <summary>
+        /// Gets or sets the application identifier.
+        /// </remarks>
+        /// <example>
+        /// <code>
+        /// <![CDATA[
+        /// <glimpse defaultRuntimePolicy="On" endpointBaseUri="~/Glimpse.axd">
+        ///     <!-- Additional Glimpse configuration nodes -->
+        /// </glimpse>
+        /// ]]>
+        /// </code>
+        /// </example>
+        [ConfigurationProperty("app", DefaultValue = null, IsRequired = true)]
+        public String App
+        {
+            get { return (string)base["app"]; }
+            set { base["app"] = value; }
+        }
+
+        /// <summary>
+        /// Logstash url.
+        /// </remarks>
+        /// <example>
+        /// <code>
+        /// <![CDATA[
+        /// <glimpse defaultRuntimePolicy="On" endpointBaseUri="~/Glimpse.axd">
+        ///     <!-- Additional Glimpse configuration nodes -->
+        /// </glimpse>
+        /// ]]>
+        /// </code>
+        /// </example>
+        [ConfigurationProperty("logstash", DefaultValue = null, IsRequired = false)]
+        public String Logstash
+        {
+            get { return (string)base["logstash"]; }
+            set { base["logstash"] = value; }
+        }
+
+        /// <summary>
         /// Gets or sets an <see cref="IServiceLocator"/> Glimpse will use to override default type resolution.
         /// </summary>
         /// <example>
